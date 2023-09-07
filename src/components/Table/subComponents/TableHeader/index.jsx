@@ -19,7 +19,7 @@ const TableHeader = (props) => {
                     <th 
                         style={{width: column.width}}
                         key={index}
-                        onClick={() => handleClick(column.dataIndex)}
+                        onClick={column.sortable ? () => handleClick(column.dataIndex) : null}
                     >
                         {column.title} 
                     </th>

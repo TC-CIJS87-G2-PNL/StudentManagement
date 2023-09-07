@@ -6,7 +6,7 @@ const TableRow = (props) => {
         <>
             {
                 data.map((row, rowIndex) => 
-                    <tr key={rowIndex}>
+                    <tr key={row.id}>
                         {
                             columns.map((column, colIndex) => <TableCell key={colIndex} rowIndex={rowIndex} colIndex={colIndex} column={column} row={row}/>)
                         }

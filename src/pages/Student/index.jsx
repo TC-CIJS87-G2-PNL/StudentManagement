@@ -41,7 +41,7 @@ const Student = () => {
         {
             title: 'STT',
             width: 50,
-            sortable: false,
+            sortable: true,
             render: (row, value, index) => {
                 return index + 1;
             }
@@ -66,7 +66,7 @@ const Student = () => {
             title: 'Tuổi',
             dataIndex: 'age',
             width: 100,
-            sortable: true,
+            sortable: false,
         },
         {
             title: 'Địa chỉ',
@@ -94,7 +94,7 @@ const Student = () => {
         {
             title: 'Thao tác',
             width: 200,
-            sortable: false,
+            sortable: true,
             render: (row, _) => {
                 return (
                     <>
@@ -131,8 +131,7 @@ const Student = () => {
                 ) * ( order === 'asc' ? 1 : -1)
             )
             setStudents(sortedStudents)
-        }
-        
+        }   
     }
 
     return (
