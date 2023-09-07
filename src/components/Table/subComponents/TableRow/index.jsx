@@ -8,7 +8,7 @@ const TableRow = (props) => {
                 data.map((row, rowIndex) => 
                     <tr key={rowIndex}>
                         {
-                            columns.map((column, colIndex) => <TableCell rowIndex={rowIndex} colIndex={colIndex} column={column} row={row}/>)
+                            columns.map((column, colIndex) => <TableCell key={colIndex} rowIndex={rowIndex} colIndex={colIndex} column={column} row={row}/>)
                         }
                     </tr>
                 )

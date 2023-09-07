@@ -13,7 +13,7 @@ const AddStudent = (props) => {
         const {name, value} = event.target;
         setStudent({
             ...student,
-            [name]: name === 'sex' ? parseInt(value) : value
+            [name]: name === 'sex' || name ==='age' ? parseInt(value) : value
         })
     }
     

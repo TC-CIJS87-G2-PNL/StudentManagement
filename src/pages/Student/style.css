@@ -2,10 +2,6 @@
     background: black!important;
     color: white;
 }
-.container-fluid {
-    /* height: 1000vh; */
-}
-
 button.backToTopBtn {
     border: none;
     width: 50px;
