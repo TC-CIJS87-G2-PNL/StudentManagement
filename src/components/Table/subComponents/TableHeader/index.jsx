@@ -1,5 +1,16 @@
+import { useState } from "react";
+
 const TableHeader = (props) => {
-    const {columns } = props;
+    const {columns, handleSort } = props;
+    const [field, setField] = useState(null);
+    const [order, setOrder] = useState('asc');
+
+    const handleClick = (dataIndex) => {
+        setField(dataIndex);
+        let newOrder = dataIndex === field && order === 'asc' ? 'desc' : 'asc';
+        setOrder(newOrder);
+        handleSort(field, order);
+    }
 
     return (
         <tr>
@@ -8,6 +19,7 @@ const TableHeader = (props) => {
                     <th 
                         style={{width: column.width}}
                         key={index}
+                        onClick={() => handleClick(column.dataIndex)}
                     >
                         {column.title} 
                     </th>

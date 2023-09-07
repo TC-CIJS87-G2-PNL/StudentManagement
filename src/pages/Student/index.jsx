@@ -122,13 +122,23 @@ const Student = () => {
         setStudents(_updatedStudents)
     }
 
+    const handleSort = (column, order) => {
+        let sortedStudents = [...students].sort((a, b) => 
+            a[column].toString().localeCompare(
+                b[column].toString(),
+                'vi'
+            ) * ( order === 'asc' ? 1 : -1)
+        )
+        setStudents(sortedStudents)
+    }
+
     return (
         <div className={`container-fluid`} style={{paddingTop: 20}}>
             <h2>Quản lý học sinh</h2>
 
             <AddStudent onAdd={handleAddStudent}/>
 
-            <MyTable columns={columns} data={students}/>
+            <MyTable columns={columns} data={students} handleSort={handleSort}/>
 
         </div>
     )
