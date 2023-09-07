@@ -123,13 +123,16 @@ const Student = () => {
     }
 
     const handleSort = (column, order) => {
-        let sortedStudents = [...students].sort((a, b) => 
-            a[column].toString().localeCompare(
-                b[column].toString(),
-                'vi'
-            ) * ( order === 'asc' ? 1 : -1)
-        )
-        setStudents(sortedStudents)
+        if(column) {
+            let sortedStudents = [...students].sort((a, b) => 
+                a[column].toString().localeCompare(
+                    b[column].toString(),
+                    'vi'
+                ) * ( order === 'asc' ? 1 : -1)
+            )
+            setStudents(sortedStudents)
+        }
+        
     }
 
     return (
